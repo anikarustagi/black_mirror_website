@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Black (Mirror) Market</title>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #cfcfcf;
+    font-family: monospace;
+    margin: 20px;
+  }
+  h1 {
+    color: #31ff6a;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+  }
+  .product {
+    margin-bottom: 20px;
+  }
+  .product h2 {
+    color: #6dffb8;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .price {
+    color: #ffc13b;
+    font-weight: bold;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 3px 6px;
+    border: 1px solid #333;
+    background-color: #111;
+    color: #31ff6a;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .checkout {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+  }
+  .checkout h2 {
+    color: #ff3b3b;
+    font-size: 16px;
+  }
+  .total {
+    color: #ffc13b;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <h1>The Black (Mirror) Market</h1>
+  <p><small>Fictional Black Mirror Parody Site</small></p>
+  <br>
+
+  <div class="product">
+    <h2>Z-Eyes Exploit (White Christmas)</h2>
+    <p>Bypass blocks and filters applied through Z-Eyes. Gain unrestricted vision, remove “ghosting,” and see what they don’t want you to see.</p>
+    <p class="price" data-price="3000">$ 3,000</p>
+    <button class="btn add-to-cart" data-price="3000">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>The Grain Hack (Entire History of You)</h2>
+    <p>Access and replay someone’s memories without consent. Copy, delete, or alter visual records for leverage, blackmail, or erasure.</p>
+    <p class="price" data-price="5200">$ 5,200</p>
+    <button class="btn add-to-cart" data-price="5200">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>Arkangel Override (Arkangel)</h2>
+    <p>Disable parental filters, lift monitoring restrictions, and view unfiltered feeds. Take control of what the subject sees and what guardians know.</p>
+    <p class="price" data-price="4500">$ 4,500</p>
+    <button class="btn add-to-cart" data-price="4500">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>Experiencer Disk Exploit (USS Callister)</h2>
+    <p>Gain control of stored consciousness copies. Extract, duplicate, or alter digital selves for manipulation or escape scenarios.</p>
+    <p class="price" data-price="6800">$ 6,800</p>
+    <button class="btn add-to-cart" data-price="6800">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>San Junipero Port Access (San Junipero)</h2>
+    <p>Tap into virtual afterlife servers. Redirect sessions, alter settings, or extend control beyond approved limits.</p>
+    <p class="price" data-price="7400">$ 7,400</p>
+    <button class="btn add-to-cart" data-price="7400">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>Bundle Access Pack</h2>
+    <p>Full suite exploit package: Z-Eyes, Grain, Arkangel, Experiencer Disks, and San Junipero Ports. Ultimate visibility and control across worlds.</p>
+    <p class="price" data-price="15000">$ 15,000</p>
+    <button class="btn add-to-cart" data-price="15000">Add to Cart</button>
+  </div>
+
+  <div class="checkout">
+    <h2>Checkout</h2>
+    <p>Items in Cart: <span id="cart-count" style="color:#7aa07a;">0</span></p>
+    <p>Total: <span id="cart-total" class="total">$ 0</span></p>
+    <button class="btn">Proceed to Payment</button>
+    <p><small>(Non-functional — for visual use only)</small></p>
+  </div>
+
+  <script>
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    const cartCountEl = document.getElementById("cart-count");
+    const cartTotalEl = document.getElementById("cart-total");
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const price = parseInt(button.getAttribute("data-price"));
+        cartCount++;
+        cartTotal += price;
+        cartCountEl.textContent = cartCount;
+        cartTotalEl.textContent = "$ " + cartTotal.toLocaleString();
+      });
+    });
+  </script>
+</body>
+</html>
